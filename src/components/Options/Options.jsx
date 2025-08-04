@@ -1,19 +1,21 @@
-import { useState } from "react";
 import './Options.css';
 
 
-export default function Options() {
-    const [good, setGood] = useState(0);
-    const [neutral, setNeutral] = useState(0);
-    const [bad, setBad] = useState(0);
-
+export default function Options({
+    optionsGood,
+    setOptionsGood,
+    optionsNeutral,
+    setOptionsNeutral,
+    optionsBad,
+    setOptionsBad
+}) {
 
     return (
         <>
-            <button className="options-button" onClick={() => setGood(good + 1)}>Good {good}</button>
-            <button className="options-button" onClick={() => setNeutral(neutral + 1)}>Neutral { neutral}</button>
-            <button className="options-button" onClick={() => setBad(bad + 1)}>Bad { bad}</button>
-            <button className="options-button" onClick={() => { return setGood(0), setNeutral(0), setBad(0) }}>Reset</button>
+            <button className="options-button" onClick={() => setOptionsGood(optionsGood + 1)}>Good {optionsGood}</button>
+            <button className="options-button" onClick={() => setOptionsNeutral(optionsNeutral + 1)}>Neutral { optionsNeutral}</button>
+            <button className="options-button" onClick={() => setOptionsBad(optionsBad + 1)}>Bad { optionsBad}</button>
+            <button className="options-button" onClick={() => { return setOptionsGood(0), setOptionsNeutral(0), setOptionsBad(0) }}>Reset</button>
         </>
     )
 };
