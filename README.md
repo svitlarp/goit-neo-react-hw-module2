@@ -1,12 +1,19 @@
-# React + Vite
+# Reviews widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple widget that allows users to leave feedback as Good, Neutral, or Bad, and displays the collected reviews dynamically.
 
-Currently, two official plugins are available:
+## Main feature:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive Feedback – Users can select one of three review options.
+- Conditional Reset Button – The reset button appears only when there is more than one review.
+- Local Storage Persistence – Reviews are saved to local storage, and the widget initializes state with stored data if available.
+- Dynamic Notifications – If there are no reviews yet, a notification message is shown instead of statistics.
 
-## Expanding the ESLint configuration
+## Components:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Description - Displays information about the widget.
+- Options - Allows saving and displaying reviews.
+- Feedback – Shows review statistics.
+- Notafication– Alerts the user if no reviews are available.
+
+![Profile preview](./src/assets/widget.png)

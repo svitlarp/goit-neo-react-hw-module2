@@ -6,12 +6,6 @@ import Notification from "./components/Notification/Notification";
 import roundToDecimal from "./helper-functions/roundToDecimal";
 
 function App() {
-  // const [options, setOptions] = useState({
-  //   good: 0,
-  //   neutral: 0,
-  //   bad: 0,
-  // });
-
 
   const [options, setOptions] = useState(() => {
     const dataLS = JSON.parse(window.localStorage.getItem('options'));
