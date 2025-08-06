@@ -17,3 +17,5 @@ A simple widget that allows users to leave feedback as Good, Neutral, or Bad, an
 - Notafication– Alerts the user if no reviews are available.
 
 ![Profile preview](./src/assets/widget.png)
+
+[Watch the demo video](https://youtu.be/2Un0dBmv-Hk)
