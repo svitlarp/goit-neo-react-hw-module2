@@ -6,10 +6,26 @@ import Notification from "./components/Notification/Notification";
 import roundToDecimal from "./helper-functions/roundToDecimal";
 
 function App() {
-  const [options, setOptions] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  // const [options, setOptions] = useState({
+  //   good: 0,
+  //   neutral: 0,
+  //   bad: 0,
+  // });
+
+
+  const [options, setOptions] = useState(() => {
+    const dataLS = JSON.parse(window.localStorage.getItem('options'));
+    console.log(dataLS);
+    
+    if (dataLS) {
+      return dataLS;
+    } else {
+      return {
+        good: 0,
+        neutral: 0,
+        bad: 0,
+      }
+    }
   });
 
   function resetOptions() {
@@ -43,13 +59,11 @@ function App() {
       positiveFeedback = roundToDecimal(((options.good + options.neutral) / totalFeedback) * 100);
       }
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('optionsStat', options);
-  // }, []);
+  useEffect(() => {
+    const optionsData = JSON.stringify(options);
+    window.localStorage.setItem('options', optionsData) // JSON.stringify()
+  }, [options]);
 
-  // useEffect(() => {
-  //   window.localStorage.getItem('optionsStat');
-  // }, []);
 
   return <>
     <Description />
@@ -62,3 +76,7 @@ function App() {
 }
 
 export default App
+
+
+
+  
